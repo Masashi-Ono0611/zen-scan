@@ -87,7 +87,7 @@ In the fast-paced world of crypto, users often make hasty decisions that lead to
 ### Meditation Mechanics
 
 - **Tilt Tolerance**: ±5° (critical) to ±15° (medium) from horizontal
-- **Duration**: 5s (medium risk) → 15s (critical risk)
+- **Duration**: 15s (medium risk) → 60s (critical risk)
 - **Visual Feedback**: Canvas-based water ripples, Enso circle, tilt indicator
 - **Haptic Feedback**: Subtle vibrations for state changes
 
@@ -160,9 +160,9 @@ border-radius: 16px;
 
 | Risk Level | Duration | Tilt Tolerance | Stability Required |
 |------------|----------|----------------|-------------------|
-| Medium (41-60) | 5s | ±15° | 60% |
-| High (61-80) | 10s | ±10° | 75% |
-| Critical (81-100) | 15s | ±5° | 90% |
+| Medium (41-60) | 15s | ±15° | 60% |
+| High (61-80) | 30s | ±10° | 75% |
+| Critical (81-100) | 60s | ±5° | 90% |
 
 ### 5. Serverless Scalability
 

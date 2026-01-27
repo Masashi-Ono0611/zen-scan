@@ -27,21 +27,18 @@ export const MEDITATION_THRESHOLD = 40; // Risk score above this requires medita
 // Meditation Configuration by Risk Level
 // ============================================
 
-// TODO: Restore production values before release
-// Production values: medium: 15s, high: 30s, critical: 60s
-// Current values are reduced for testing purposes
 export const MEDITATION_CONFIGS: Record<string, MeditationConfig> = {
   // Risk 0-40: No meditation required
-  none: { duration: 0, tiltTolerance: 0, stabilityRequired: 0 },
+  none: { duration: 0, tiltTolerance: 0 },
   
   // Risk 41-60: Light meditation
-  medium: { duration: 5, tiltTolerance: 15, stabilityRequired: 60 },
+  medium: { duration: 15, tiltTolerance: 15 },
   
-  // Risk 61-80: Moderate meditation (production: 30s)
-  high: { duration: 10, tiltTolerance: 10, stabilityRequired: 75 },
+  // Risk 61-80: Moderate meditation
+  high: { duration: 30, tiltTolerance: 10 },
   
-  // Risk 81-100: Strict meditation (production: 60s)
-  critical: { duration: 15, tiltTolerance: 5, stabilityRequired: 90 },
+  // Risk 81-100: Strict meditation
+  critical: { duration: 60, tiltTolerance: 5 },
 };
 
 // ============================================

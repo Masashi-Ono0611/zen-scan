@@ -213,7 +213,7 @@ export function MeditationScreen({
         </div>
       </div>
 
-      {/* Mode Toggle - subtle bottom-right control */}
+      {/* Mode Toggle - hidden in production
       <div className="fixed bottom-4 right-4 z-20 opacity-70 hover:opacity-100 transition-opacity">
         <div className="inline-flex rounded-full border border-gray-800/40 bg-gray-900/40 backdrop-blur-sm overflow-hidden">
           <button
@@ -236,6 +236,7 @@ export function MeditationScreen({
           </button>
         </div>
       </div>
+      */}
     </div>
   );
 }

@@ -74,8 +74,7 @@ export interface RiskAssessment {
 
 export interface MeditationConfig {
   duration: number;           // seconds (15, 30, or 60)
-  tiltTolerance: number;      // degrees (3, 5, or 10)
-  stabilityRequired: number;  // percentage (60, 75, or 90)
+  tiltTolerance: number;      // degrees (5, 10, or 15)
 }
 
 export interface MeditationState {

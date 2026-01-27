@@ -128,7 +128,7 @@ export function useMeditationSession({
         intervalRef.current = null;
       }
     };
-  }, [state.isActive, state.isComplete, isDeviceStable, config.stabilityRequired]);
+  }, [state.isActive, state.isComplete, isDeviceStable]);
 
   // Handle completion
   useEffect(() => {
