@@ -1,0 +1,30 @@
+# Node
+node_modules
+
+# Output and Staging
+/.*
+/**/.*
+/**/*.zip
+/**/app.config.json
+/**/cdk.out
+/**/build
+/**/dist
+
+# Env
+.env
+.env.*
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+!.gitignore
+
+# AI code assistants
+!.kiro
+!.claude
