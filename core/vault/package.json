@@ -17,12 +17,12 @@
 		"@core/tools": "workspace:*",
 		"@core/tools-server": "workspace:*",
 		"@core/types": "workspace:*",
-		"@types/node": "^25.0.7",
+		"@types/node": "^25.0.10",
 		"tsup": "^8.5.1"
 	},
 	"dependencies": {
 		"@aws-lambda-powertools/logger": "^2.30.2",
-		"@aws-sdk/client-secrets-manager": "^3.967.0",
-		"@aws-sdk/client-ssm": "^3.967.0"
+		"@aws-sdk/client-secrets-manager": "^3.975.0",
+		"@aws-sdk/client-ssm": "^3.975.0"
 	}
 }

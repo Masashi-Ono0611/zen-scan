@@ -25,14 +25,14 @@
     "devDependencies": {
         "@core/types": "workspace:*",
         "@types/cross-spawn": "^6.0.6",
-        "@types/node": "^25.0.7",
+        "@types/node": "^25.0.10",
         "@types/node-fetch": "^2.6.13",
         "tsx": "^4.21.0",
         "typescript": "^5.9.3"
     },
     "dependencies": {
-        "@aws-sdk/client-cloudfront": "^3.967.0",
-        "@aws-sdk/client-wafv2": "^3.967.0",
+        "@aws-sdk/client-cloudfront": "^3.975.0",
+        "@aws-sdk/client-wafv2": "^3.975.0",
         "@clack/prompts": "^0.11.0",
         "@core/constants": "workspace:*",
         "@core/session-server": "workspace:*",
@@ -41,12 +41,12 @@
         "@core/vault": "workspace:*",
         "@gui/react": "workspace:*",
         "@tg/bot": "workspace:*",
-        "aws-cdk": "^2.1100.3",
-        "aws-cdk-lib": "^2.234.1",
+        "aws-cdk": "^2.1103.0",
+        "aws-cdk-lib": "^2.236.0",
         "cdk-nag": "^2.37.55",
-        "constructs": "^10.4.4",
+        "constructs": "^10.4.5",
         "cross-spawn": "^7.0.6",
-        "grammy": "^1.39.2",
+        "grammy": "^1.39.3",
         "picocolors": "^1.1.1"
     }
 }

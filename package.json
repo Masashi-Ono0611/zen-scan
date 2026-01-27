@@ -35,9 +35,9 @@
 	"dependencies": {
 		"@clack/prompts": "^0.11.0",
 		"cross-spawn": "^7.0.6",
-		"grammy": "^1.39.2",
+		"grammy": "^1.39.3",
 		"picocolors": "^1.1.1",
-		"pnpm": "^10.28.0",
+		"pnpm": "^10.28.2",
 		"yaml": "^2.8.2"
 	}
 }

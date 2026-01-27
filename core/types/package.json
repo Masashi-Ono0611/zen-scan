@@ -13,8 +13,8 @@
 		"build": "tsup"
 	},
 	"devDependencies": {
-		"@types/node": "^25.0.7",
-		"grammy": "^1.39.2",
+		"@types/node": "^25.0.10",
+		"grammy": "^1.39.3",
 		"tsup": "^8.5.1"
 	}
 }

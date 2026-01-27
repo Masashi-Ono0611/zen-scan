@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@core/types": "workspace:*",
-		"@types/node": "^25.0.7",
+		"@types/node": "^25.0.10",
 		"tsup": "^8.5.1"
 	}
 }

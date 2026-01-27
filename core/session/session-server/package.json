@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@core/session-types": "workspace:*",
-		"@types/node": "^25.0.7",
+		"@types/node": "^25.0.10",
 		"typescript": "^5.9.3"
 	},
 	"dependencies": {
