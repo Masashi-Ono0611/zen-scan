@@ -1,0 +1,407 @@
+/* Zen Scan - Custom Styles */
+
+/* Telegram Mini App Safe Area Variables */
+:root {
+  --zen-bg-dark: #1a1a1a;
+  --zen-bg-medium: #1f1f1f;
+  --zen-bg-light: #2a2a2a;
+  --zen-text-primary: #ffffff;
+  --zen-text-secondary: #9ca3af;
+  --zen-text-muted: #6b7280;
+  --zen-accent: #6b7280;
+  --zen-ink: #374151;
+  --zen-sumi: #1f2937;
+  --zen-safe: #22c55e;
+  --zen-low: #84cc16;
+  --zen-medium: #f97316;
+  --zen-high: #ef4444;
+  --zen-critical: #dc2626;
+  
+  /* Telegram Safe Area Insets - fallback to 0 */
+  --tg-safe-top: var(--tg-safe-area-inset-top, 0px);
+  --tg-safe-bottom: var(--tg-safe-area-inset-bottom, 0px);
+  --tg-safe-left: var(--tg-safe-area-inset-left, 0px);
+  --tg-safe-right: var(--tg-safe-area-inset-right, 0px);
+  --tg-content-top: var(--tg-content-safe-area-inset-top, 0px);
+  --tg-content-bottom: var(--tg-content-safe-area-inset-bottom, 0px);
+}
+
+/* Prevent zoom on input focus (iOS) */
+input, textarea, select {
+  font-size: 16px !important;
+}
+
+/* Full viewport container for Telegram Mini App */
+.tg-app-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Screen container with safe area handling */
+.tg-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: calc(var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--tg-safe-area-inset-bottom, 0px) + var(--tg-content-safe-area-inset-bottom, 0px) + env(safe-area-inset-bottom, 0px));
+  padding-left: var(--tg-safe-area-inset-left, 0px);
+  padding-right: var(--tg-safe-area-inset-right, 0px);
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Keyboard-aware adjustments */
+@supports (height: 100dvh) {
+  .tg-app-container {
+    height: 100dvh;
+  }
+}
+
+/* Ensure inputs scroll into view when focused */
+input:focus, textarea:focus {
+  scroll-margin-bottom: 120px;
+}
+
+/* Webkit scrolling for smooth experience */
+.-webkit-overflow-scrolling-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Ink drop spreading animation - より見やすく、振動付き */
+@keyframes ink-spread {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+/* 振動エフェクト */
+@keyframes ripple-vibrate {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  10% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  20% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  30% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(2);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.3;
+  }
+  60% {
+    transform: scale(3);
+    opacity: 0.2;
+  }
+  80% {
+    transform: scale(4);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+/* Zen circle drawing animation */
+@keyframes enso-draw {
+  0% {
+    stroke-dashoffset: 283;
+  }
+  100% {
+    stroke-dashoffset: 30;
+  }
+}
+
+/* Slow horizontal pan for background images */
+@keyframes pan-horizontal {
+  0% {
+    transform: scale(1.1) translateX(0);
+  }
+  50% {
+    transform: scale(1.1) translateX(-5%);
+  }
+  100% {
+    transform: scale(1.1) translateX(0);
+  }
+}
+
+/* Gentle fade in */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Water drop ripple */
+@keyframes water-drop {
+  0% {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Subtle glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(107, 114, 128, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(107, 114, 128, 0.5));
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-ink-spread {
+  animation: ink-spread 3s ease-out infinite;
+}
+
+.animate-ripple-vibrate {
+  animation: ripple-vibrate 3s ease-out infinite;
+}
+
+.animate-enso-draw {
+  animation: enso-draw 2s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-water-drop {
+  animation: water-drop 2s ease-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-pan-horizontal {
+  animation: pan-horizontal 10s ease-in-out infinite;
+}
+
+/* Ink Wash Effect */
+.ink-wash-bg {
+  background: linear-gradient(
+    135deg,
+    var(--zen-bg-dark) 0%,
+    var(--zen-bg-medium) 50%,
+    var(--zen-bg-dark) 100%
+  );
+}
+
+/* Enso Circle Glow */
+.enso-glow {
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Water Ripple Container */
+.water-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    var(--zen-bg-dark) 70%
+  );
+  pointer-events: none;
+}
+
+/* Zen Button Hover Effect */
+.zen-button-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.zen-button-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.zen-button-hover:hover::after {
+  transform: translateX(100%);
+}
+
+/* Tilt Indicator Styles */
+.tilt-zone {
+  background: radial-gradient(
+    circle at center,
+    rgba(107, 114, 128, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* Stability Progress Bar */
+.stability-bar {
+  background: linear-gradient(
+    90deg,
+    var(--zen-safe) 0%,
+    var(--zen-medium) 50%,
+    var(--zen-high) 100%
+  );
+}
+
+/* Text Gradient */
+.text-gradient-zen {
+  background: linear-gradient(135deg, #6b7280, #9ca3af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card Styles */
+.zen-card {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(107, 114, 128, 0.2);
+  border-radius: 12px;
+}
+
+/* Input Focus Ring */
+.zen-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.3);
+}
+
+/* Scrollbar Styles */
+.zen-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.zen-scrollbar::-webkit-scrollbar-track {
+  background: var(--zen-bg-dark);
+}
+
+.zen-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--zen-accent);
+  border-radius: 2px;
+}
+
+/* Safe Area Padding for Mobile */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 20px);
+}

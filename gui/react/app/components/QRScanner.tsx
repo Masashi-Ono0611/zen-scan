@@ -65,7 +65,7 @@ function QRScanner({ tg } : { tg: TelegramState }) {
     return (
         <div className="p-6 pt-8">
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold text-white">QR Scanner</h1>
+                <h1 className="text-2xl font-bold text-white">QR Scanner Test</h1>
                 {scanResults.length > 0 && (
                     <button
                         onClick={clearResults}

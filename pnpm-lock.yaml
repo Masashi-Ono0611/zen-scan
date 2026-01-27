@@ -259,6 +259,9 @@ importers:
       '@aws-lambda-powertools/logger':
         specifier: ^2.30.2
         version: 2.30.2
+      '@aws-sdk/client-bedrock-runtime':
+        specifier: ^3.800.0
+        version: 3.975.0
       '@core/session-client':
         specifier: workspace:*
         version: link:../../core/session/session-client
