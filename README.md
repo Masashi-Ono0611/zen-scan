@@ -27,7 +27,7 @@ In the fast-paced world of crypto, users often make hasty decisions that lead to
 - **pnpm** monorepo management
 
 **AI & Data:**
-- **Amazon Bedrock** (Claude 3.5 Sonnet) for risk analysis
+- **Amazon Bedrock** (Amazon Nova Lite) for risk analysis
 - **TonAPI.io** for TON blockchain data
 - **Custom prompt engineering** for zen-inspired responses
 
@@ -86,9 +86,9 @@ In the fast-paced world of crypto, users often make hasty decisions that lead to
 
 ### Meditation Mechanics
 
-- **Tilt Tolerance**: ±10° from horizontal
-- **Duration**: 10s (low risk) → 60s (critical risk)
-- **Visual Feedback**: Water ripples, Enso circle, tilt indicator
+- **Tilt Tolerance**: ±5° (critical) to ±15° (medium) from horizontal
+- **Duration**: 5s (medium risk) → 15s (critical risk)
+- **Visual Feedback**: Canvas-based water ripples, Enso circle, tilt indicator
 - **Haptic Feedback**: Subtle vibrations for state changes
 
 ## 🤖 AI Implementation
@@ -131,28 +131,40 @@ When AI returns unexpected formats, the system:
 
 ```typescript
 // Real-time device orientation tracking
-const { beta, gamma } = deviceOrientation;
-const distance = Math.sqrt(beta * beta + gamma * gamma);
-const isStable = distance <= tolerance;
+const { beta, gamma } = orientation;
+const tiltAngle = Math.sqrt(beta * beta + gamma * gamma);
+const isStable = tiltAngle <= tolerance;
 ```
 
-### 2. Smooth Animations
+### 2. Canvas-Based Water Ripple Animation
 
-- Water ripple shader effects
-- Enso circle progress animations
-- Tilt indicator with cubic-bezier easing
-- Haptic feedback integration
+```typescript
+// Dynamic ripple count based on intensity
+const rippleCount = 3 + Math.floor(intensity * 4);
+
+// Ripple distortion for organic feel
+const distortion = intensity * 10 * Math.sin(t * 3 + i);
+const r = radius + distortion * Math.sin(angle * 3 + t);
+```
 
 ### 3. iOS-Style Glassmorphism
 
 ```css
+background: rgba(30, 35, 46, 0.20);
 backdrop-filter: blur(8px);
-background: rgba(255, 255, 255, 0.15);
-border: 1px solid rgba(255, 255, 255, 0.3);
-box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 16px;
 ```
 
-### 4. Serverless Scalability
+### 4. Meditation Configuration by Risk Level
+
+| Risk Level | Duration | Tilt Tolerance | Stability Required |
+|------------|----------|----------------|-------------------|
+| Medium (41-60) | 5s | ±15° | 60% |
+| High (61-80) | 10s | ±10° | 75% |
+| Critical (81-100) | 15s | ±5° | 90% |
+
+### 5. Serverless Scalability
 
 - **Cold start optimization**: < 500ms
 - **Auto-scaling**: 0 to 1000+ concurrent users
@@ -164,7 +176,7 @@ box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
 | Service | Purpose | Pricing Model |
 |---------|---------|---------------|
 | **Lambda** (ARM, 256MB) | Compute | ~$0.20 per million requests |
-| **Bedrock** (Claude 3.5) | AI inference | ~$3 per million input tokens |
+| **Bedrock** (Nova Lite) | AI inference | ~$0.06 per million input tokens |
 | **CloudFront** | CDN | $0.085 per GB + $0.01 per 10K requests |
 | **DynamoDB** | Session storage | $0.625 per million writes |
 | **WAF** | Security | $5/month base + $0.60 per million requests |
@@ -230,7 +242,9 @@ pnpm dev
 
 ## 📱 Demo
 
-**Try Zen Scan:** [https://t.me/zen_scan_bot/app](https://t.me/zen_scan_bot/app)
+**Telegram Mini App:** [https://t.me/zen_scan_bot/app](https://t.me/zen_scan_bot/app)
+
+**Web App:** [https://d3nowvfeajy85g.cloudfront.net/app](https://d3nowvfeajy85g.cloudfront.net/app)
 
 **Test Addresses:**
 - Safe: [EQBRBreA0bxgUMSzl-C4mWMaEMlne4R1e3ne8TlBcn2Eq8SY](https://tonviewer.com/EQBRBreA0bxgUMSzl-C4mWMaEMlne4R1e3ne8TlBcn2Eq8SY)
