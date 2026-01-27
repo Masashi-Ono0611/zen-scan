@@ -44,6 +44,7 @@ interface RiskAssessment {
 
 const BEDROCK_REGION = process.env.AWS_REGION || "us-east-1";
 // Use Amazon Nova Lite model
+// Alternative: "us.anthropic.claude-haiku-4-5-20251001-v1:0" (requires Marketplace subscription)
 const BEDROCK_MODEL = process.env.BEDROCK_MODEL || "us.amazon.nova-2-lite-v1:0";
 
 // ============================================
@@ -82,9 +83,9 @@ Respond ONLY with valid JSON (no markdown, no code blocks, no explanation):
   "score": <0-100 integer>,
   "level": "<safe|low|medium|high|critical>",
   "zenWarning": "<calming but clear warning in Zen style, max 5 words>",
-  "technicalExplanation": "<brief technical analysis, max 50 words>",
+  "technicalExplanation": "<detailed technical analysis covering contract status and risk factors, 30-50 words>",
   "redFlags": ["<short flag, max 5 words>", "<short flag, max 5 words>"],
-  "recommendation": "<actionable advice, max 30 words>"
+  "recommendation": "<specific actionable advice, 15-25 words>"
 }
 `;
 
