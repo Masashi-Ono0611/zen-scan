@@ -43,8 +43,8 @@ interface RiskAssessment {
 // ============================================
 
 const BEDROCK_REGION = process.env.AWS_REGION || "us-east-1";
-// Use Amazon Nova Pro model (high performance)
-const BEDROCK_MODEL = process.env.BEDROCK_MODEL || "us.amazon.nova-pro-v1:0";
+// Use Amazon Nova Lite model
+const BEDROCK_MODEL = process.env.BEDROCK_MODEL || "us.amazon.nova-2-lite-v1:0";
 
 // ============================================
 // Prompt Template
