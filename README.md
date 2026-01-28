@@ -194,6 +194,8 @@ border-radius: 16px;
 
 ### Quick Start
 
+> ⚠️ Both `gui/` and `bot/` directories contain customizations from the original template. Make sure to clone the entire repository.
+
 ```bash
 # Clone repository
 git clone <repository-url>
@@ -246,6 +248,8 @@ pnpm dev
 
 **Web App:** [https://d3nowvfeajy85g.cloudfront.net/app](https://d3nowvfeajy85g.cloudfront.net/app)
 
+> 📲 This app uses the gyroscope for meditation tracking. For the best experience, use the Telegram Mini App on your mobile device.
+
 **Test Addresses:**
 - Safe: [EQBRBreA0bxgUMSzl-C4mWMaEMlne4R1e3ne8TlBcn2Eq8SY](https://tonviewer.com/EQBRBreA0bxgUMSzl-C4mWMaEMlne4R1e3ne8TlBcn2Eq8SY)
 - Risky: [EQBenYZM6nFbinA7QGAOSvNwWsGP79n3wuOgQL7g8JpKJ0o6](https://tonviewer.com/EQBenYZM6nFbinA7QGAOSvNwWsGP79n3wuOgQL7g8JpKJ0o6)
@@ -260,13 +264,6 @@ pnpm dev
 4. **User Psychology**: Addresses impulsive decision-making in crypto
 5. **Production Ready**: Full CI/CD, monitoring, scalability
 
-### Future Roadmap
-
-- [ ] Multi-chain support (Ethereum, Solana)
-- [ ] Community risk ratings
-- [ ] Advanced meditation modes (breathing exercises)
-- [ ] Browser extension
-- [ ] Mobile app (React Native)
 
 ## 📄 License
 
